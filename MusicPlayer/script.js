@@ -94,6 +94,8 @@ function mute_sound() {
 	// 0為靜音
 	track.volume = 0;
 	volume_show.innerHTML = 0;
+	// 將range 調為0
+	recent_volume.value = 0
 }
 
 
