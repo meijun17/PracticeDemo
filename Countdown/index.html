@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Coming Soon</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">we are coming soon</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Iure iusto consectetur sed ab? Quos reprehenderit cumque laudantium tempore
+                magni odio. Magni iusto similique dicta, debitis repudiandae voluptas ullam.
+                Minima, necessitatibus?</p>
+            <div class="count-down">
+                <div class="box">
+                    <h3 id="days">00</h3>
+                    <p>days</p>
+                </div>
+                <div class="box">
+                    <h3 id="hours">00</h3>
+                    <p>hours</p>
+                </div>
+                <div class="box">
+                    <h3 id="minutes">00</h3>
+                    <p>minutes</p>
+                </div>
+                <div class="box">
+                    <h3 id="seconds">00</h3>
+                    <p>seconds</p>
+                </div>
+            </div>
+            <a href="#" class="btn">notify me</a>
+        </div>
+    </div>
+    <script>
+        // snow fall animation
+        function createSnow() {
+            let container = document.querySelector(".container");
+            let span = document.createElement("span");
+
+            span.style.left = Math.random() * innerWidth + 'px'
+            container.appendChild(span);
+
+            setTimeout(() => {
+                span.remove()
+            }, 5000);
+        }
+
+        setInterval(createSnow, 100)
+
+        // countdown part
+        let countDate = new Date('Jan 1, 2022 00:00:00').getTime();
+
+        function countDown() {
+            let now = new Date().getTime();
+            gap = countDate - now;
+
+            let seconds = 1000;
+            let minutes = seconds * 60;
+            let hours = minutes * 60;
+            let days = hours * 24;
+
+            let d = Math.floor(gap / (days));
+            let h = Math.floor((gap % (days)) / (hours));
+            let m = Math.floor((gap % (hours)) / (minutes));
+            let s = Math.floor((gap % (minutes)) / (seconds));
+
+            document.getElementById('days').innerText = d;
+            document.getElementById('hours').innerText = h;
+            document.getElementById('minutes').innerText = m;
+            document.getElementById('seconds').innerText = s;
+
+        }
+
+        setInterval(function () {
+            countDown()
+        }, 1000);
+
+        
+        function step(stepNum) {
+            console.log(`step${stepNum}`)
+        }
+
+        step('1')
+        setTimeout(function () { step('2') }, 0)
+        step('3')
+
+
+    </script>
+
+</body>
+
+</html>
