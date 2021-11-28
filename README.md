@@ -1,9 +1,9 @@
 "# PracticeDemo" 
 
 網頁功能練習
-1. MoonLightParallaxEffects：運用css html 做出視差捲動的效果
+1. Calculator
 
-2. MusicPlayer：運用css html javascript 做音樂播放器
+2. Countdown
 
 3. MoonLightParallaxEffects：運用css html 做出視差捲動的效果
 
